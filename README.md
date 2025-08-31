@@ -212,6 +212,45 @@ _Run these commands from the root folder_
 - Format Code: `make fmt`
 - Run Unit Tests: `make test`
 
+### Quick Start for Excel Export
+
+To quickly set up the development environment and generate an Excel file with league statistics:
+
+1. **Setup Environment:**
+   ```bash
+   ./setup_dev_env.sh
+   ```
+
+2. **Generate Excel File:**
+   ```bash
+   ./run_excel_export.sh
+   ```
+
+The Excel file will be created at `/tmp/excel.xlsx` and will contain:
+- A tab for each year with team stats
+- A tab for each year with matchup info  
+- A tab for all-time with team stats
+- A tab for all-time with matchup info
+- A tab for all-time with owner stats
+
+### Manual Setup
+
+If you prefer to set up manually:
+
+1. Install system dependencies:
+   ```bash
+   sudo apt install python3-numpy
+   pip install openpyxl
+   ```
+
+2. Set environment variables and run:
+   ```bash
+   export TEMP_DIR="/tmp"
+   export PYTHONPATH="$(pwd):$PYTHONPATH"
+   cd e2e
+   python test-excel.py
+   ```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
