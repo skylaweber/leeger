@@ -3,7 +3,13 @@ from __future__ import annotations
 import logging
 import sys
 
-from sleeper.util.CustomFormatter import CustomFormatter
+
+class CustomFormatter(logging.Formatter):
+    """
+    Simple custom formatter to replace the sleeper dependency.
+    """
+    def __init__(self, fmt: str, datefmt: str):
+        super().__init__(fmt=fmt, datefmt=datefmt)
 
 
 class CustomLogger:
